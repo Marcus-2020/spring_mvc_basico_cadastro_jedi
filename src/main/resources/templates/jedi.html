@@ -28,12 +28,34 @@
                     <tr th:each="jedi : ${allJedi}">
                         <td th:text="${jedi.name}"></td>
                         <td th:text="${jedi.lastName}"></td>
+                        <td>
+                            <a th:href="@{/jedi/__${jedi.id}__/delete}" onclick="return confirm('Delete?')">
+                                Delete
+                            </a>
+                            <a th:href="@{/jedi/__${jedi.id}__/update}">
+                                Update
+                            </a>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
-        <br>
-        <b><a href="#" th:href="@{/new-jedi}">New Jedi</a></b>
+        <br/>
+
+        <b><a href="#" th:href="@{/new-jedi}">New Jedi</a></b> | <b><a href="#" th:href="@{/jedi}">All Jedi</a></b>
+        <br/><br/>
+
+        <div class="col-sm-6">
+            <div class="row" style="margin-left:15px">
+                <form th:action="@{/search}"  method="get">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="name"/>
+                    </div>
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

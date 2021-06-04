@@ -1,4 +1,4 @@
-package com.marstechnologiesbr.spring_mvc_teste;
+package com.marstechnologiesbr.springwebmvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
